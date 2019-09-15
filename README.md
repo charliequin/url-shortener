@@ -1,7 +1,7 @@
 To view the live demo, go here: [https://charliequin.github.io/url-shortener/#/](https://charliequin.github.io/url-shortener/#/)
 
 ## url-shortener
-This is a URL Shortener built using React and the Bitly API.
+This is a URL Shortener built using React, Bitly and Semantic UI for React.
 
 To get started, navigate into the ``client`` folder and run ``npm i`` or ``npm install`` to download all of the applications dependencies.
 
