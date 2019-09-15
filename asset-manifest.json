@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/url-shortener/static/css/main.94ad8322.chunk.css",
+    "main.js": "/url-shortener/static/js/main.2d6a3ecf.chunk.js",
+    "main.js.map": "/url-shortener/static/js/main.2d6a3ecf.chunk.js.map",
+    "runtime~main.js": "/url-shortener/static/js/runtime~main.1de70bc1.js",
+    "runtime~main.js.map": "/url-shortener/static/js/runtime~main.1de70bc1.js.map",
+    "static/css/2.35b2f209.chunk.css": "/url-shortener/static/css/2.35b2f209.chunk.css",
+    "static/js/2.f2ef31c2.chunk.js": "/url-shortener/static/js/2.f2ef31c2.chunk.js",
+    "static/js/2.f2ef31c2.chunk.js.map": "/url-shortener/static/js/2.f2ef31c2.chunk.js.map",
+    "index.html": "/url-shortener/index.html",
+    "precache-manifest.6b66f24bae721202c06f7310baeb7250.js": "/url-shortener/precache-manifest.6b66f24bae721202c06f7310baeb7250.js",
+    "service-worker.js": "/url-shortener/service-worker.js",
+    "static/css/2.35b2f209.chunk.css.map": "/url-shortener/static/css/2.35b2f209.chunk.css.map",
+    "static/css/main.94ad8322.chunk.css.map": "/url-shortener/static/css/main.94ad8322.chunk.css.map",
+    "static/media/semantic.min.css": "/url-shortener/static/media/outline-icons.ef60a4f6.woff",
+    "static/media/icons8-react.svg": "/url-shortener/static/media/icons8-react.a9e22f05.svg"
+  }
+}
