@@ -5,7 +5,6 @@ import {
   Segment
  } from 'semantic-ui-react';
 import URLInput from './URLInput';
-import URLResult from './URLResult';
 import BitlyPNG from '../../images/bitly.png';
 import ReactSVG from  '../../images/icons8-react.svg';
 import SemanticPNG from '../../images/semantic-ui-react.png'
@@ -13,10 +12,6 @@ import SemanticPNG from '../../images/semantic-ui-react.png'
 export default class Landing extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      URL: '',
-      convertedURL: ''
-    }
   }
   
   componentWillMount() {
@@ -71,7 +66,6 @@ export default class Landing extends React.Component {
           <Header style={{margin: '5px'}} as='h1'>URL Shortener</Header>
           <Header style={{margin: '5px 0 20px'}} as='h5'>Made with love using {this.ReactSVG()} + {this.BitlyPNG()} + {this.SemanticPNG()}</Header>
           <URLInput/>
-          <URLResult urlResult={this.state.convertedURL}/>
         </Segment>
       </Container>
     );
