@@ -7,7 +7,7 @@ import {
 import URLInput from './URLInput';
 import BitlyPNG from '../../images/bitly.png';
 import ReactSVG from  '../../images/icons8-react.svg';
-import SemanticPNG from '../../images/semantic-ui-react.png'
+import SemanticPNG from '../../images/semantic-ui-react.png';
 
 export default class Landing extends React.Component {
   constructor(props) {

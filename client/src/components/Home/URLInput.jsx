@@ -66,7 +66,7 @@ export default class URLInput extends React.Component {
   formResponse() {
     if (this.state.hasError) {
       return (
-        <Message style={{margin: '5px', width: '100%'}} negative>
+        <Message style={{margin: '5px 0', width: '100%'}} negative>
           Sorry, there was a problem with your request.
         </Message>
       );

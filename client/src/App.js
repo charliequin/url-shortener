@@ -5,7 +5,7 @@ import Landing from './components/Home/Landing';
 
 function App() {
   return (
-    <Router>
+    <Router basename='/'>
       <Route exact path="/" component={ Landing }></Route>
     </Router>
   );
