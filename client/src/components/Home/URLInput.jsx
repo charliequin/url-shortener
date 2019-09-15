@@ -1,5 +1,6 @@
 import React from 'react';
 import { Input, Message } from 'semantic-ui-react';
+import Copy from 'copy-to-clipboard';
 import { BitlyClient } from 'bitly';
 import { TOKEN } from '../../config.js';
 
@@ -42,30 +43,36 @@ export default class URLInput extends React.Component {
     })
   }
 
-  // copySubmit = (e) => {
-  //   e.preventDefault();
-  //   document.execCommand('copy');
-  //   e.target.focus();
-  //   this.setState({copied: true});
-  //   return (
-  //     <Message positive>
-  //       Link copied to clipboard :)
-  //     </Message>
-  //   )
-  // }
+  handleCopy = (e) => {
+    Copy(this.state.convertedURL)
+    this.setState({copied: true})
+  }
+
+  copiedMessage() {
+    if (this.state.copied) {
+      return (
+        <Message positive style={{fontWeight: '600', width: '100%', margin: '5px 0'}}>
+          Link copied to clipboard.
+        </Message>
+      );
+    } else {
+      return (
+        <>
+        </>
+      )
+    }
+  }
 
   formResponse() {
     if (this.state.hasError) {
       return (
-        <Message style={{margin: '5px'}} negative>
+        <Message style={{margin: '5px', width: '100%'}} negative>
           Sorry, there was a problem with your request.
         </Message>
       );
     }
     if (this.state.convertedURL) {
       return (
-        <>
-        <form onSubmit={this.copySubmit}>
         <Input
         style={{width: '100%'}}
         action={{
@@ -73,11 +80,10 @@ export default class URLInput extends React.Component {
           labelPosition: 'right',
           icon: 'copy',
           content: 'Copy',
+          onClick: this.handleCopy
         }}
         defaultValue={this.state.convertedURL}
         />
-        </form>
-        </>
       );
     }
   }
@@ -101,6 +107,7 @@ export default class URLInput extends React.Component {
         />
       </form>
       {this.formResponse()}
+      {this.copiedMessage()}
       </>
     );
   }
