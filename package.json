@@ -1,0 +1,19 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "\u0016\u0016This is a URL Shortener built using React and the Bitly API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charliequin/url-shortener.git"
+  },
+  "author": "Charlie Quin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charliequin/url-shortener/issues"
+  },
+  "homepage": "https://github.com/charliequin/url-shortener#readme"
+}
