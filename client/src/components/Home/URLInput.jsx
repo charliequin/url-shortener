@@ -11,12 +11,13 @@ export default class URLInput extends React.Component {
     super(props)
     this.state = {
       isLoading: false,
-      hasError: false
+      hasError: false,
+      URL: ''
     }
   }
 
   handleChange = (e) => {
-    this.setState({ [e.target.name] : e.target.value});
+    this.setState({ [e.target.name] : (e.target.value.startsWith('http') ? e.target.value : 'http://' + e.target.value)})
   }
 
   handleSubmit = (e) => {
@@ -51,7 +52,7 @@ export default class URLInput extends React.Component {
   copiedMessage = () => {
     if (this.state.copied) {
       return (
-        <Message positive style={{fontWeight: '600', height: '50px', width: '100%', margin: '5px 0'}}>
+        <Message positive style={{fontWeight: '600', width: '100%', margin: '5px 0'}}>
           Link copied to clipboard.
         </Message>
       );
@@ -97,9 +98,13 @@ export default class URLInput extends React.Component {
         loading={this.state.isLoading}
         name='URL' 
         onChange={this.handleChange} 
-        style={{width: '100%', height: '50px', margin: '5px 0'}} 
+        style={{width: '100%', margin: '5px 0'}} 
         loading={this.state.isLoading}
-        placeholder='Enter URL...'
+        placeholder='example.com'
+        label={{
+          color: 'teal',
+          content: 'http://'
+        }}
         action={{ 
           icon: 'cut', 
           color: 'teal' 
