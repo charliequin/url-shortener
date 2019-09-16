@@ -61,8 +61,8 @@ export default class Landing extends React.Component {
           transform: 'translate(-50%, -50%)', 
           textAlign: 'center', 
           maxWidth: '600px',
-          minWidth: '500px',
-          padding: '30px'
+          minWidth: '475px',
+          padding: '40px'
         }}>
           <Header style={{margin: '5px'}} as='h1'>URL Shortener</Header>
           <Header style={{margin: '5px 0 20px'}} as='h5'>Made with love using {this.ReactSVG()} + {this.BitlyPNG()} + {this.SemanticPNG()}</Header>

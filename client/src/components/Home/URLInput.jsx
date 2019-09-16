@@ -20,18 +20,16 @@ export default class URLInput extends React.Component {
   }
 
   handleSubmit = (e) => {
-    this.setState({isLoading: true,
-      hasError: false
-    })
-    e.preventDefault();
+    this.setState({isLoading: true})
     this.urlForm.reset();
+    e.preventDefault();
     Bitly
     .shorten(this.state.URL)
     .then((result) => {
-      console.log(result.url);
-      this.setState({convertedURL: result.url, 
-        URL: null,
-        isLoading: false
+      this.setState({URL: false,
+        hasError: false,
+        isLoading: false,
+        convertedURL: result.url
       })
     })
     .catch((err) => {
@@ -50,10 +48,10 @@ export default class URLInput extends React.Component {
     this.setState({copied: true})
   }
 
-  copiedMessage() {
+  copiedMessage = () => {
     if (this.state.copied) {
       return (
-        <Message positive style={{fontWeight: '600', width: '100%', margin: '5px 0'}}>
+        <Message positive style={{fontWeight: '600', height: '50px', width: '100%', margin: '5px 0'}}>
           Link copied to clipboard.
         </Message>
       );
@@ -65,7 +63,7 @@ export default class URLInput extends React.Component {
     }
   }
 
-  formResponse() {
+  formResponse = () => {
     if (this.state.hasError) {
       return (
         <Message style={{margin: '5px 0', width: '100%'}} negative>
@@ -76,7 +74,7 @@ export default class URLInput extends React.Component {
     if (this.state.convertedURL) {
       return (
         <Input
-        style={{width: '100%'}}
+        style={{width: '100%', height: '50px'}}
         action={{
           color: 'teal',
           labelPosition: 'right',
@@ -95,10 +93,11 @@ export default class URLInput extends React.Component {
       <>
       <form ref={(urlForm) => this.urlForm = urlForm} onSubmit={this.handleSubmit}>
         <Input
+        disabled={this.state.isLoading}
         loading={this.state.isLoading}
         name='URL' 
         onChange={this.handleChange} 
-        style={{width: '100%', margin: '5px 0'}} 
+        style={{width: '100%', height: '50px', margin: '5px 0'}} 
         loading={this.state.isLoading}
         placeholder='Enter URL...'
         action={{ 
