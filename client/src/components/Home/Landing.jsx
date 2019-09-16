@@ -84,10 +84,10 @@ export default class Landing extends React.Component {
           textAlign: 'center',
           padding: '60px 30px'
         }}>
-          <Label attached='top left' onClick={() => (this.setState({lightMode: true}), this.lightModeOn())} as='a'>
+          <Label attached='top left' onClick={() => this.lightModeOn()} as='a'>
             Light On
           </Label>
-          <Label attached='top right' onClick={() => (this.setState({lightMode: false}), this.lightModeOff())} as='a' color='black'>
+          <Label attached='top right' onClick={() => this.lightModeOff()} as='a' color='black'>
             Light Off
           </Label>
           <Header style={{margin: '5px'}} as='h1'>URL Shortener</Header>
