@@ -81,10 +81,10 @@ export default class Landing extends React.Component {
           padding: '20% 0'
         }}>
           <Segment inverted={!this.state.lightMode} size={this.state.width < 750 ? 'small' : 'massive'} stacked style={{
-            padding: '30px 40px'
+            padding: '50px 40px'
           }}>
-            <Label>
-              <Checkbox toggle onClick={() => (this.setState({lightMode: false}), this.lightModeOn())}/>
+            <Label attached='top'>
+              <Checkbox label={this.state.lightMode ? `Light's Off` : `Light's On`} toggle onClick={() => (this.setState({lightMode: false}), this.lightModeOn())}/>
             </Label>
             <Header style={{margin: '5px'}} as='h1'>URL Shortener</Header>
             <Header style={{margin: '5px 0 20px'}} as='h3'>Made with love using {this.ReactSVG()} + {this.BitlyPNG()} + {this.SemanticPNG()}</Header>
