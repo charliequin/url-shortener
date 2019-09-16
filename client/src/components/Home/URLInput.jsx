@@ -20,7 +20,9 @@ export default class URLInput extends React.Component {
   }
 
   handleSubmit = (e) => {
-    this.setState({isLoading: true})
+    this.setState({isLoading: true,
+      hasError: false
+    })
     e.preventDefault();
     this.urlForm.reset();
     Bitly
@@ -28,7 +30,6 @@ export default class URLInput extends React.Component {
     .then((result) => {
       console.log(result.url);
       this.setState({convertedURL: result.url, 
-        hasError: false, 
         URL: null,
         isLoading: false
       })
@@ -82,7 +83,7 @@ export default class URLInput extends React.Component {
           content: 'Copy',
           onClick: this.handleCopy
         }}
-        defaultValue={this.state.convertedURL}
+        value={this.state.convertedURL}
         />
       );
     }
