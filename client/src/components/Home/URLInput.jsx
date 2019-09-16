@@ -102,7 +102,7 @@ export default class URLInput extends React.Component {
         error={this.state.hasError}
         placeholder='Enter URL...'
         action={{ 
-          icon: 'caret right', 
+          icon: 'cut', 
           color: 'teal' 
         }}
         />
