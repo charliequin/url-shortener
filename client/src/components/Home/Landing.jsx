@@ -14,13 +14,19 @@ export default class Landing extends React.Component {
   constructor(props) {
     super(props)
     this.state={
-      lightMode: true
+      lightMode: true,
+      width: window.innerWidth
     }
+    this.windowResize();
   }
 
   componentDidMount() {
     let backgroundImage = 'linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%)';
     document.body.style.backgroundImage = backgroundImage
+  }
+
+  windowResize = () => {
+    window.addEventListener('resize', () => this.setState({width: window.innerWidth}))
   }
 
   ReactSVG() {
@@ -70,13 +76,13 @@ export default class Landing extends React.Component {
         justifyContent: 'center', 
         alignItems: 'center'
       }}>
-        <Segment inverted={!this.state.lightMode} stacked size='massive' padded='true' compact style={{
+        <Segment inverted={!this.state.lightMode} size={this.state.width < 750 ? 'small' : 'massive'} stacked style={{
           position: 'absolute', 
           top: '40%', 
           left: '50%', 
           transform: 'translate(-50%, -50%)', 
           textAlign: 'center',
-          padding: '40px'
+          padding: '60px 30px'
         }}>
           <Label attached='top left' onClick={() => (this.setState({lightMode: true}), this.lightModeOn())} as='a'>
             Light On
@@ -86,7 +92,7 @@ export default class Landing extends React.Component {
           </Label>
           <Header style={{margin: '5px'}} as='h1'>URL Shortener</Header>
           <Header style={{margin: '5px 0 20px'}} as='h3'>Made with love using {this.ReactSVG()} + {this.BitlyPNG()} + {this.SemanticPNG()}</Header>
-          <URLInput/>
+          <URLInput />
         </Segment>
       </Container>
     );

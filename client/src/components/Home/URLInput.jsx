@@ -95,7 +95,7 @@ export default class URLInput extends React.Component {
         loading={this.state.isLoading}
         name='URL' 
         onChange={this.handleChange} 
-        style={{width: '100%', margin: '5px 0'}} 
+        style={{Width: '100%', margin: '5px 0'}} 
         loading={this.state.isLoading}
         placeholder='example.com'
         label={{
