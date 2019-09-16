@@ -11,8 +11,7 @@ export default class URLInput extends React.Component {
     super(props)
     this.state = {
       isLoading: false,
-      hasError: false,
-      URL: ''
+      hasError: false
     }
   }
 
@@ -75,12 +74,10 @@ export default class URLInput extends React.Component {
     if (this.state.convertedURL) {
       return (
         <Input
-        style={{width: '100%', height: '50px'}}
+        style={{width: '100%'}}
         action={{
           color: 'teal',
-          labelPosition: 'right',
           icon: 'copy',
-          content: 'Copy',
           onClick: this.handleCopy
         }}
         value={this.state.convertedURL}

@@ -23,7 +23,7 @@ export default class Landing extends React.Component {
     return (
       <img style={{
         display: 'inline-block',
-        width: '25px'
+        width: '30px'
       }} height='0px' src={ReactSVG}/>
     );
   }
@@ -31,7 +31,7 @@ export default class Landing extends React.Component {
   BitlyPNG() {
     return (
       <img style={{
-        width: '40px',
+        width: '45px',
         display: 'inline-block'
       }} src={BitlyPNG}/>
     );
@@ -40,7 +40,7 @@ export default class Landing extends React.Component {
   SemanticPNG() {
     return (
       <img style={{
-        width: '20px',
+        width: '25px',
         display: 'inline-block'
       }} src={SemanticPNG}/>
     );
@@ -54,18 +54,16 @@ export default class Landing extends React.Component {
         justifyContent: 'center', 
         alignItems: 'center'
       }}>
-        <Segment compact style={{
+        <Segment stacked size='massive' padded='true' compact style={{
           position: 'absolute', 
           top: '40%', 
           left: '50%', 
           transform: 'translate(-50%, -50%)', 
-          textAlign: 'center', 
-          maxWidth: '600px',
-          minWidth: '475px',
+          textAlign: 'center',
           padding: '40px'
         }}>
           <Header style={{margin: '5px'}} as='h1'>URL Shortener</Header>
-          <Header style={{margin: '5px 0 20px'}} as='h5'>Made with love using {this.ReactSVG()} + {this.BitlyPNG()} + {this.SemanticPNG()}</Header>
+          <Header style={{margin: '5px 0 20px'}} as='h3'>Made with love using {this.ReactSVG()} + {this.BitlyPNG()} + {this.SemanticPNG()}</Header>
           <URLInput/>
         </Segment>
       </Container>
