@@ -3,8 +3,7 @@ import {
   Container, 
   Header,
   Segment,
-  Label,
-  Icon
+  Label
  } from 'semantic-ui-react';
 import URLInput from './URLInput';
 import BitlyPNG from '../../images/bitly.png';
