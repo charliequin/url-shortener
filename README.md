@@ -9,6 +9,8 @@ This is a URL Shortener built using React, Bitly and Semantic UI for React.
 
 3. Once you have all that configured, run ``npm start`` from your terminal and the application will run at **localhost:3000**.
 
+4. When using the application, links can be served as either: ``http://example.com``, ``www.example.com`` or ``example.com``.
+
 
 
 
