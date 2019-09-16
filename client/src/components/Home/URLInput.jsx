@@ -39,7 +39,8 @@ export default class URLInput extends React.Component {
       this.setState({hasError: true, 
         convertedURL: false,
         isLoading: false,
-        copied: false
+        copied: false,
+        URL: null
       })
     })
   }
@@ -68,7 +69,7 @@ export default class URLInput extends React.Component {
     if (this.state.hasError) {
       return (
         <Message style={{margin: '5px 0', width: '100%'}} negative>
-          Sorry, there was a problem with your request.
+          Sorry, please try again.
         </Message>
       );
     }
@@ -99,7 +100,6 @@ export default class URLInput extends React.Component {
         onChange={this.handleChange} 
         style={{width: '100%', margin: '5px 0'}} 
         loading={this.state.isLoading}
-        error={this.state.hasError}
         placeholder='Enter URL...'
         action={{ 
           icon: 'cut', 
