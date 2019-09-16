@@ -51,7 +51,7 @@ export default class URLInput extends React.Component {
   copiedMessage = () => {
     if (this.state.copied) {
       return (
-        <Message positive style={{fontWeight: '600', width: '100%', margin: '5px 0'}}>
+        <Message size='mini' positive style={{width: '100%', margin: '5px 0'}}>
           Link copied to clipboard.
         </Message>
       );
@@ -95,13 +95,9 @@ export default class URLInput extends React.Component {
         loading={this.state.isLoading}
         name='URL' 
         onChange={this.handleChange} 
-        style={{Width: '100%', margin: '5px 0'}} 
+        style={{width: '100%', margin: '5px 0'}} 
         loading={this.state.isLoading}
         placeholder='example.com'
-        label={{
-          color: 'teal',
-          content: 'http://'
-        }}
         action={{ 
           icon: 'cut', 
           color: 'teal' 

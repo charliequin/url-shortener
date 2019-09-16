@@ -3,6 +3,8 @@ import {
   Container, 
   Header,
   Segment,
+  Checkbox,
+  Icon,
   Label
  } from 'semantic-ui-react';
 import URLInput from './URLInput';
@@ -57,43 +59,38 @@ export default class Landing extends React.Component {
   }
 
   lightModeOn() {
-    let backgroundImage = 'linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%)';
-    document.body.style.backgroundImage = backgroundImage
-    this.setState({lightMode: true})
-  }
-
-  lightModeOff() {
-    let backgroundImage = 'linear-gradient(120deg, #242424 0%, #003350 100%)';
-    document.body.style.backgroundImage = backgroundImage
-    this.setState({lightMode: false})
+    if (this.state.lightMode) {
+      let backgroundImage = 'linear-gradient(120deg, #242424 0%, #003350 100%)';
+      document.body.style.backgroundImage = backgroundImage
+      this.setState({lightMode: false})
+    } else {
+      let backgroundImage = 'linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%)';
+      document.body.style.backgroundImage = backgroundImage
+      this.setState({lightMode: true})
+    }
   }
 
   render() {
     return (
-      <Container style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center', 
-        alignItems: 'center'
-      }}>
-        <Segment inverted={!this.state.lightMode} size={this.state.width < 750 ? 'small' : 'massive'} stacked style={{
-          position: 'absolute', 
-          top: '40%', 
-          left: '50%', 
-          transform: 'translate(-50.1%, -50.1%)', 
+      <Container>
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
           textAlign: 'center',
-          padding: '60px 30px'
+          padding: '20% 0'
         }}>
-          <Label attached='top left' onClick={() => this.lightModeOn()} as='a'>
-            Light On
-          </Label>
-          <Label attached='top right' onClick={() => this.lightModeOff()} as='a' color='black'>
-            Light Off
-          </Label>
-          <Header style={{margin: '5px'}} as='h1'>URL Shortener</Header>
-          <Header style={{margin: '5px 0 20px'}} as='h3'>Made with love using {this.ReactSVG()} + {this.BitlyPNG()} + {this.SemanticPNG()}</Header>
-          <URLInput />
-        </Segment>
+          <Segment inverted={!this.state.lightMode} size={this.state.width < 750 ? 'small' : 'massive'} stacked style={{
+            padding: '30px 40px'
+          }}>
+            <Label>
+              <Checkbox toggle onClick={() => (this.setState({lightMode: false}), this.lightModeOn())}/>
+            </Label>
+            <Header style={{margin: '5px'}} as='h1'>URL Shortener</Header>
+            <Header style={{margin: '5px 0 20px'}} as='h3'>Made with love using {this.ReactSVG()} + {this.BitlyPNG()} + {this.SemanticPNG()}</Header>
+            <URLInput />
+          </Segment>
+        </div>
       </Container>
     );
   }
