@@ -80,7 +80,7 @@ export default class Landing extends React.Component {
           position: 'absolute', 
           top: '40%', 
           left: '50%', 
-          transform: 'translate(-50%, -50%)', 
+          transform: 'translate(-50.1%, -50.1%)', 
           textAlign: 'center',
           padding: '60px 30px'
         }}>
