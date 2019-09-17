@@ -61,7 +61,10 @@ export default class Landing extends React.Component {
           textAlign: 'center',
           padding: '20% 0'
         }}>
-          <Segment inverted={!this.state.lightMode} size={this.state.width < 750 ? 'small' : 'massive'} stacked style={{padding: '50px 40px'}}>
+          <Segment inverted={!this.state.lightMode} size={this.state.width < 750 ? 'small' : 'massive'} stacked style={{
+            padding: (this.state.width < 750 ? '50px 20px' : '50px 30px'),
+            width: (this.state.width < 750 ? '' : '600px')
+            }}>
             <Label attached='top'>
               <Checkbox label={this.state.lightMode ? `Light's On` : `Light's Off`} toggle onClick={() => (this.setState({lightMode: false}), this.lightModeOn())}/>
             </Label>

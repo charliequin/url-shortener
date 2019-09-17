@@ -76,8 +76,8 @@ export default class URLInput extends React.Component {
         <Input
         style={{width: '100%'}}
         action={{
-          color: 'teal',
           icon: 'copy',
+          color: 'blue',
           onClick: this.handleCopy
         }}
         value={this.state.convertedURL}
@@ -100,7 +100,7 @@ export default class URLInput extends React.Component {
         placeholder='example.com'
         action={{ 
           icon: 'cut', 
-          color: 'teal' 
+          color: 'blue' 
         }}
         />
       </form>
