@@ -4,7 +4,6 @@ import {
   Header,
   Segment,
   Checkbox,
-  Icon,
   Label
  } from 'semantic-ui-react';
 import URLInput from './URLInput';
@@ -31,30 +30,12 @@ export default class Landing extends React.Component {
     window.addEventListener('resize', () => this.setState({width: window.innerWidth}))
   }
 
-  ReactSVG() {
+  imageReturner(src, width) {
     return (
       <img style={{
-        display: 'inline-block',
-        width: '30px'
-      }} height='0px' src={ReactSVG}/>
-    );
-  }
-
-  BitlyPNG() {
-    return (
-      <img style={{
-        width: '45px',
+        width: width,
         display: 'inline-block'
-      }} src={BitlyPNG}/>
-    );
-  }
-
-  SemanticPNG() {
-    return (
-      <img style={{
-        width: '25px',
-        display: 'inline-block'
-      }} src={SemanticPNG}/>
+      }} src={src}/>
     );
   }
 
@@ -80,14 +61,14 @@ export default class Landing extends React.Component {
           textAlign: 'center',
           padding: '20% 0'
         }}>
-          <Segment inverted={!this.state.lightMode} size={this.state.width < 750 ? 'small' : 'massive'} stacked style={{
-            padding: '50px 40px'
-          }}>
+          <Segment inverted={!this.state.lightMode} size={this.state.width < 750 ? 'small' : 'massive'} stacked style={{padding: '50px 40px'}}>
             <Label attached='top'>
               <Checkbox label={this.state.lightMode ? `Light's On` : `Light's Off`} toggle onClick={() => (this.setState({lightMode: false}), this.lightModeOn())}/>
             </Label>
             <Header style={{margin: '5px'}} as='h1'>URL Shortener</Header>
-            <Header style={{margin: '5px 0 20px'}} as='h3'>Made with love using {this.ReactSVG()} + {this.BitlyPNG()} + {this.SemanticPNG()}</Header>
+            <Header style={{margin: '5px 0 20px'}} as='h3'>
+              Made with love using {this.imageReturner(ReactSVG, '25px')} + {this.imageReturner(BitlyPNG, '40px')} + {this.imageReturner(SemanticPNG, '20px')}
+            </Header>
             <URLInput />
           </Segment>
         </div>
