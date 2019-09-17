@@ -66,7 +66,7 @@ export default class Landing extends React.Component {
             width: (this.state.width < 750 ? '' : '600px')
             }}>
             <Label attached='top'>
-              <Checkbox label={this.state.lightMode ? `Light's On` : `Light's Off`} toggle onClick={() => (this.setState({lightMode: false}), this.lightModeOn())}/>
+              <Checkbox label={this.state.lightMode ? `Dark Mode Off` : `Dark Mode On`} toggle onClick={() => (this.setState({lightMode: false}), this.lightModeOn())}/>
             </Label>
             <Header style={{margin: '5px'}} as='h1'>URL Shortener</Header>
             <Header style={{margin: '5px 0 20px'}} as='h3'>
