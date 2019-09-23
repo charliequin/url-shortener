@@ -62,7 +62,7 @@ export default class URLInput extends React.Component {
       return (
         <>
         </>
-      )
+      );
     }
   }
 
