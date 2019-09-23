@@ -20,7 +20,10 @@ export default class URLInput extends React.Component {
   }
 
   handleSubmit = (e) => {
-    this.setState({isLoading: true})
+    this.setState({
+      isLoading: true, 
+      copied: false
+    })
     this.urlForm.reset();
     e.preventDefault();
     Bitly
